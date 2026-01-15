@@ -21,8 +21,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const raw = localStorage.getItem('breezecars_user');
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setUser(JSON.parse(raw));
-    } catch (e) {
+    } catch {
       // ignore
     }
   }, []);

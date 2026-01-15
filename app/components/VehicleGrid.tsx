@@ -36,6 +36,7 @@ export default function VehicleGrid() {
   useEffect(() => {
     const raw = localStorage.getItem('breezecars_cars');
     if (raw) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCars(JSON.parse(raw));
     } else {
       // Seed the localStorage so Admin panel has data to start with
