@@ -10,18 +10,18 @@ export default function Features() {
         {/* Left Card: Rare Finds / Premium Inventory */}
         <div className="bg-[#f8f7ff] rounded-[40px] p-12 flex flex-col justify-between min-h-[420px] border border-purple-50 relative overflow-hidden group">
           <div className="relative z-10">
-            <span className="text-[#632197] text-[10px] font-black uppercase tracking-[0.2em]">Limited Collection</span>
+            <span className="text-[#632197] text-[10px] font-black uppercase tracking-[0.2em]">The Collection</span>
             <h2 className="text-4xl font-black text-gray-900 mt-4 mb-4 tracking-tighter italic uppercase">
-              The <span className="text-[#632197]">Rare</span> Edit.
+              Beyond <span className="text-[#632197]">Rare.</span>
             </h2>
             <p className="text-gray-500 font-medium leading-relaxed max-w-[280px]">
-              Access our vault of low-mileage, high-spec luxury vehicles that you will not  find on public marketplaces.
+              Step inside our vault of unlisted, high-performance icons. Sourced globally for the few who know exactly what they want.
             </p>
           </div>
 
           <div className="relative z-10 mt-8">
             <button className="bg-black text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-[#632197] transition-all transform active:scale-95 shadow-xl">
-              View Rare Finds
+              Unlock Inventory
             </button>
           </div>
 
@@ -34,18 +34,18 @@ export default function Features() {
         {/* Right Card: Concierge / Sell Section */}
         <div className="bg-[#0a0a0a] rounded-[40px] p-12 flex flex-col justify-between min-h-[420px] relative overflow-hidden shadow-2xl group">
           <div className="relative z-10">
-            <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">Breeze Concierge</span>
+            <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">VIP Concierge</span>
             <h2 className="text-4xl font-black text-white mt-4 mb-4 tracking-tighter italic uppercase">
-              Effortless <span className="text-[#632197]">Selling.</span>
+              Liquidate <span className="text-[#632197]">Instantly.</span>
             </h2>
             <p className="text-white/50 font-medium leading-relaxed max-w-[300px]">
-              Do not deal with low-ballers. We offer premium valuations and instant wire transfers for your luxury vehicle.
+              Bypass the public market. We provide immediate, premium liquidity for your luxury asset with zero friction and absolute privacy.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 relative z-10">
              <button className="bg-[#632197] text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all shadow-lg">
-               Get Your Quote
+               Sell Your Car
              </button>
              <button className="border-2 border-white/10 text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/5 transition-all">
                How it works

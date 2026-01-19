@@ -51,9 +51,9 @@ export default function Hero() {
                 <div className="flex flex-col gap-1">
                   <label className="text-[9px] font-bold text-gray-400 uppercase ml-1">Category</label>
                   <select className="w-full p-3 bg-gray-50 border border-gray-100 rounded-xl font-bold text-sm text-gray-700 outline-none focus:border-[#632197] transition-all cursor-pointer">
-                    <option>Luxury SUVs</option>
-                    <option>Sedans</option>
-                    <option>Sports</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
                   </select>
                 </div>
               </div>

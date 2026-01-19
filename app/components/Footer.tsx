@@ -28,7 +28,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-3 group">
-                <span className="text-[#632197] text-xl">✉️</span>
+                <span className="text-[#632197] text-xl"></span>
                 <a href="mailto:breezecardealership@gmail.com" className="group-hover:text-white transition-colors break-all">
                 breezecardealership@gmail.com
                 </a>
@@ -68,9 +68,9 @@ export default function Footer() {
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
           <p>© {new Date().getFullYear()} Breezecars Dealership. All Rights Reserved.</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-white transition-colors">Facebook</Link>
-            <Link href="#" className="hover:text-white transition-colors">Instagram</Link>
-            <Link href="#" className="hover:text-white transition-colors">WhatsApp</Link>
+            <a href="https://facebook.com" className="hover:text-white transition-colors">Facebook</a>
+            <a href="https://instagram.com" className="hover:text-white transition-colors">Instagram</a>
+            <a href="https://whatsapp.com" className="hover:text-white transition-colors">WhatsApp</a>
           </div>
         </div>
       </div>

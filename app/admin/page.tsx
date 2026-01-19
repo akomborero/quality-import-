@@ -126,13 +126,13 @@ export default function AdminPage() {
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-4">{editingCarId ? 'Edit Car' : 'Create / Post New Car'}</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input required placeholder="Year / Make / Model" value={name} onChange={(e) => setName(e.target.value)} className="p-3 border rounded-lg" />
-          <input required placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} className="p-3 border rounded-lg" />
-          <input required placeholder="Year" value={year} onChange={(e) => setYear(e.target.value)} className="p-3 border rounded-lg" />
-          <input required placeholder="Mileage (e.g. 50,000 km)" value={mileage} onChange={(e) => setMileage(e.target.value)} className="p-3 border rounded-lg" />
-          <input required placeholder="Transmission (e.g. Automatic)" value={transmission} onChange={(e) => setTransmission(e.target.value)} className="p-3 border rounded-lg" />
-          <input required placeholder="Fuel Type (e.g. Petrol)" value={fuelType} onChange={(e) => setFuelType(e.target.value)} className="p-3 border rounded-lg" />
-          <textarea required placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} className="p-3 border rounded-lg md:col-span-2 h-24" />
+          <input required placeholder="Year / Make / Model" data-testid="input-name" value={name} onChange={(e) => setName(e.target.value)} className="p-3 border rounded-lg" />
+          <input required placeholder="Price" data-testid="input-price" value={price} onChange={(e) => setPrice(e.target.value)} className="p-3 border rounded-lg" />
+          <input required placeholder="Year" data-testid="input-year" value={year} onChange={(e) => setYear(e.target.value)} className="p-3 border rounded-lg" />
+          <input required placeholder="Mileage (e.g. 50,000 km)" data-testid="input-mileage" value={mileage} onChange={(e) => setMileage(e.target.value)} className="p-3 border rounded-lg" />
+          <input required placeholder="Transmission (e.g. Automatic)" data-testid="input-transmission" value={transmission} onChange={(e) => setTransmission(e.target.value)} className="p-3 border rounded-lg" />
+          <input required placeholder="Fuel Type (e.g. Petrol)" data-testid="input-fuel" value={fuelType} onChange={(e) => setFuelType(e.target.value)} className="p-3 border rounded-lg" />
+          <textarea required placeholder="Description" data-testid="input-description" value={description} onChange={(e) => setDescription(e.target.value)} className="p-3 border rounded-lg md:col-span-2 h-24" />
           
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">Car Images</label>
@@ -155,7 +155,7 @@ export default function AdminPage() {
           </div>
 
           <div className="md:col-span-2 flex gap-4">
-            <button type="submit" className="flex-1 py-3 bg-[#632197] text-white rounded-lg font-bold">
+            <button type="submit" data-testid="btn-submit" className="flex-1 py-3 bg-[#632197] text-white rounded-lg font-bold">
               {editingCarId ? 'Update Car' : 'Post Car'}
             </button>
             {editingCarId && (
@@ -170,7 +170,7 @@ export default function AdminPage() {
         <div className="space-y-4">
           {cars.length === 0 && <p className="text-gray-500">No cars posted yet.</p>}
           {cars.map((c) => (
-            <div key={c.id} className="flex items-center justify-between border p-3 rounded-lg">
+            <div key={c.id} className="flex items-center justify-between border p-3 rounded-lg" data-testid="admin-car-row">
               <div>
                 <div className="font-bold">{c.name} <span className="text-sm text-gray-500">{c.year}</span></div>
                 <div className="text-sm text-[#632197] font-black">{c.price}</div>
@@ -178,7 +178,7 @@ export default function AdminPage() {
               <div className="flex items-center gap-3">
                 {c.imgs?.[0] && <Image src={c.imgs[0]} alt={c.name} width={96} height={64} className="object-cover rounded-md" unoptimized />}
                 <button onClick={() => startEditing(c)} className="py-2 px-3 bg-blue-500 text-white rounded-lg">Edit</button>
-                <button onClick={() => removeCar(c.id)} className="py-2 px-3 bg-red-500 text-white rounded-lg">Delete</button>
+                <button onClick={() => removeCar(c.id)} data-testid="btn-delete" className="py-2 px-3 bg-red-500 text-white rounded-lg">Delete</button>
               </div>
             </div>
           ))}

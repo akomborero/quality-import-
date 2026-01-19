@@ -159,7 +159,7 @@ export default function SellForm() {
         </div>
 
         <button type="submit" className="w-full py-6 bg-[#632197] text-white font-black rounded-3xl uppercase tracking-widest hover:scale-[1.01] transition-transform shadow-xl">
-          Get My Cash Offer Now
+          SUBMIT
         </button>
       </form>
     </div>

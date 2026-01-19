@@ -9,7 +9,8 @@ type Car = {
   name: string;
   price: string;
   year: string;
-  img: string;
+  imgs?: string[];
+  img?: string; // for backward compatibility
   mileage?: string;
   transmission?: string;
   fuelType?: string;
@@ -17,16 +18,16 @@ type Car = {
 };
 
 const initialVehicles: Car[] = [
-  { id: 1, name: "Mercedes G-Wagon", price: "$145,000", year: "2024", img: "https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&q=80&w=400" },
-  { id: 2, name: "Porsche 911", price: "$120,500", year: "2023", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=400" },
-  { id: 3, name: "Range Rover", price: "$95,000", year: "2024", img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&q=80&w=400" },
-  { id: 4, name: "BMW M4", price: "$82,000", year: "2024", img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=400" },
-  { id: 5, name: "Audi RS6", price: "$110,000", year: "2023", img: "https://images.unsplash.com/photo-1606148332571-3051375e46c7?auto=format&fit=crop&q=80&w=400" },
-  { id: 6, name: "Mercedes G-Wagon", price: "$145,000", year: "2024", img: "https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&q=80&w=400" },
-  { id: 7, name: "Porsche 911", price: "$120,500", year: "2023", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=400" },
-  { id: 8, name: "Audi RS6", price: "$110,000", year: "2023", img: "https://images.unsplash.com/photo-1606148332571-3051375e46c7?auto=format&fit=crop&q=80&w=400" },
-  { id: 9, name: "Range Rover", price: "$95,000", year: "2024", img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&q=80&w=400" },
-  { id: 10, name: "BMW M4", price: "$82,000", year: "2024", img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=400" },
+  { id: 1, name: "Mercedes G-Wagon", price: "$145,000", year: "2024", imgs: ["https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&q=80&w=400"] },
+  { id: 2, name: "Porsche 911", price: "$120,500", year: "2023", imgs: ["https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=400"] },
+  { id: 3, name: "Range Rover", price: "$95,000", year: "2024", imgs: ["https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&q=80&w=400"] },
+  { id: 4, name: "BMW M4", price: "$82,000", year: "2024", imgs: ["https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=400"] },
+  { id: 5, name: "Audi RS6", price: "$110,000", year: "2023", imgs: ["https://images.unsplash.com/photo-1606148332571-3051375e46c7?auto=format&fit=crop&q=80&w=400"] },
+  { id: 6, name: "Mercedes G-Wagon", price: "$145,000", year: "2024", imgs: ["https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&q=80&w=400"] },
+  { id: 7, name: "Porsche 911", price: "$120,500", year: "2023", imgs: ["https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=400"] },
+  { id: 8, name: "Audi RS6", price: "$110,000", year: "2023", imgs: ["https://images.unsplash.com/photo-1606148332571-3051375e46c7?auto=format&fit=crop&q=80&w=400"] },
+  { id: 9, name: "Range Rover", price: "$95,000", year: "2024", imgs: ["https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&q=80&w=400"] },
+  { id: 10, name: "BMW M4", price: "$82,000", year: "2024", imgs: ["https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=400"] },
 ];
 
 export default function VehicleGrid() {
@@ -36,7 +37,7 @@ export default function VehicleGrid() {
   useEffect(() => {
     const raw = localStorage.getItem('breezecars_cars');
     if (raw) {
-      const parsedCars = JSON.parse(raw).map((car: any) => {
+      const parsedCars = JSON.parse(raw).map((car: Partial<Car> & { img?: string }) => {
         if (car.img && !car.imgs) {
           return { ...car, imgs: [car.img], img: undefined };
         }
@@ -73,16 +74,18 @@ export default function VehicleGrid() {
         {/* The 5-Column Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {cars.map((car) => (
-            <div key={car.id} className="group cursor-pointer">
+            <div key={car.id} className="group cursor-pointer" data-testid="vehicle-card">
               {/* Image with tight aspect ratio for 5-col layout */}
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-3 bg-gray-100">
-                <Image
-                  src={car.img}
-                  alt={car.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  unoptimized
-                />
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-3 bg-gray-100 flex items-center justify-center">
+                {(car.imgs?.[0] || car.img) ? (
+                  <Image
+                    src={car.imgs?.[0] || car.img!}
+                    alt={car.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    unoptimized
+                  />
+                ) : <span className="text-xs text-gray-400">No Image</span>}
                 <div className="absolute top-3 left-3 bg-black/80 text-white text-[10px] px-2 py-1 rounded-md font-bold">
                   {car.year}
                 </div>
@@ -96,7 +99,7 @@ export default function VehicleGrid() {
                 <p className="text-[#632197] font-black text-sm mt-1">
                   {car.price}
                 </p>
-                <Link href={`/cars/${car.id}`} className="inline-block mt-2 text-[10px] font-black uppercase tracking-widest text-gray-400 group-hover:text-black transition-colors">
+                <Link href={`/cars/${car.id}`} data-testid="link-details" className="inline-block mt-2 text-[10px] font-black uppercase tracking-widest text-gray-400 group-hover:text-black transition-colors">
                   Details →
                 </Link>
               </div>
