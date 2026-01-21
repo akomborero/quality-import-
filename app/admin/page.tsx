@@ -185,13 +185,13 @@ export default function AdminPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
-      <h1 className="text-4xl font-black mb-6 text-black italic uppercase">Admin Panel</h1>
+      <h1 className="text-4xl font-black mb-6 text-black italic uppercase">Manage</h1>
 
       <section className="mb-8 bg-gray-50 p-6 rounded-[30px] border border-gray-200 shadow-sm">
         <h2 className="text-xl font-bold mb-4 text-black">{editingCarId ? 'Edit Car' : 'Post New Car'}</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input required placeholder="Make & Model" value={name} onChange={(e) => setName(e.target.value)} className="p-4 rounded-2xl border border-gray-300 text-black bg-white" />
-          <input required placeholder="Daily Price" value={price} onChange={(e) => setPrice(e.target.value)} className="p-4 rounded-2xl border border-gray-300 text-black bg-white" />
+          <input required placeholder="Asking Price" value={price} onChange={(e) => setPrice(e.target.value)} className="p-4 rounded-2xl border border-gray-300 text-black bg-white" />
           <input required placeholder="Year" value={year} onChange={(e) => setYear(e.target.value)} className="p-4 rounded-2xl border border-gray-300 text-black bg-white" />
           <input required placeholder="Mileage" value={mileage} onChange={(e) => setMileage(e.target.value)} className="p-4 rounded-2xl border border-gray-300 text-black bg-white" />
           <input required placeholder="Transmission" value={transmission} onChange={(e) => setTransmission(e.target.value)} className="p-4 rounded-2xl border border-gray-300 text-black bg-white" />
@@ -221,23 +221,51 @@ export default function AdminPage() {
 
       <section>
         <h2 className="text-xl font-bold mb-4 text-black italic">Live Inventory</h2>
-        <div className="grid gap-4">
-          {cars.map((c) => (
-            <div key={c.id} className="flex items-center justify-between bg-white border border-gray-100 p-4 rounded-3xl shadow-sm hover:shadow-md transition-all">
-              <div className="flex items-center gap-4">
-                {c.imgs?.[0] && <Image src={c.imgs[0]} alt={c.name} width={100} height={70} className="rounded-xl object-cover shadow-sm" unoptimized />}
-                <div>
-                  <div className="font-bold text-black text-lg">{c.name}</div>
-                  <div className="text-[#632197] font-black">{c.price}</div>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <button onClick={() => startEditing(c)} className="p-2 px-5 bg-gray-50 border border-gray-200 rounded-xl font-bold text-gray-700 hover:bg-gray-100">Edit</button>
-                <button onClick={() => removeCar(c.id)} className="p-2 px-5 bg-red-50 text-red-600 rounded-xl font-bold hover:bg-red-100">Delete</button>
-              </div>
-            </div>
-          ))}
+       <div className="grid gap-4">
+  {cars.map((c) => (
+    <div key={c.id} className="flex flex-col sm:flex-row sm:items-center justify-between bg-white border border-gray-100 p-4 rounded-3xl shadow-sm hover:shadow-md transition-all gap-4">
+      
+      {/* Left Side: Image and Car Info */}
+      <div className="flex items-center gap-4">
+        {c.imgs?.[0] && (
+          <Image 
+            src={c.imgs[0]} 
+            alt={c.name} 
+            width={100} 
+            height={80} 
+            className="rounded-2xl object-cover shadow-sm min-w-[100px] h-[80px]" 
+            unoptimized 
+          />
+        )}
+        <div>
+          <div className="font-black text-black text-lg uppercase italic tracking-tighter leading-tight">
+            {c.name}
+          </div>
+          <div className="text-[#632197] font-black text-xl">
+            ${c.price} <span className="text-[10px] uppercase tracking-widest text-gray-400">USD</span>
+          </div>
         </div>
+      </div>
+
+      {/* Right Side: Buttons (Now Responsive) */}
+      <div className="flex flex-row sm:flex-row gap-2 w-full sm:w-auto">
+        <button 
+          onClick={() => startEditing(c)} 
+          className="flex-1 sm:flex-none py-3 px-6 bg-gray-50 border border-gray-200 rounded-2xl font-bold text-gray-700 hover:bg-gray-100 transition-all text-sm uppercase"
+        >
+          Edit
+        </button>
+        <button 
+          onClick={() => removeCar(c.id)} 
+          className="flex-1 sm:flex-none py-3 px-6 bg-red-50 text-red-600 rounded-2xl font-bold hover:bg-red-100 transition-all text-sm uppercase"
+        >
+          Delete
+        </button>
+      </div>
+
+    </div>
+  ))}
+</div>
       </section>
     </div>
   );

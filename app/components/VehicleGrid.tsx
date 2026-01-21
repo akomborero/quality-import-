@@ -62,24 +62,31 @@ export default function VehicleGrid() {
     <section className="bg-white py-16 px-4">
       <div className="max-w-[1600px] mx-auto">
         
-        <div className="flex justify-between items-end mb-10">
-          <h2 className="text-3xl font-black text-gray-900 italic uppercase tracking-tighter">
-            Featured <span className="text-[#632197]">Stock</span>
-          </h2>
-          <div className="flex items-center gap-4">
-            {user?.isAdmin && (
-              <Link href="/admin" className="px-4 py-2 bg-[#632197] text-white text-xs font-bold rounded-lg hover:bg-[#4d1975] transition-all shadow-lg">
-                + ADD A CAR
-              </Link>
-            )}
-            <Link 
-  href="/cars" 
-  className="inline-block px-8 py-3 border-2 border-black text-black text-xs font-black uppercase tracking-[0.2em] rounded-full hover:bg-black hover:text-white transition-all duration-300 active:scale-95"
->
-  View All Cars
-</Link>
-          </div>
-        </div>
+       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+  {/* Heading */}
+  <h2 className="text-4xl md:text-5xl font-black text-gray-900 italic uppercase tracking-tighter">
+    Featured <span className="text-[#632197]">Stock</span>
+  </h2>
+
+  {/* Buttons Container */}
+  <div className="flex flex-wrap items-center gap-3">
+    {user?.isAdmin && (
+      <Link 
+        href="/admin" 
+        className="px-6 py-3 bg-[#632197] text-white text-[11px] font-black uppercase tracking-widest rounded-full hover:bg-black hover:shadow-xl transition-all duration-300 active:scale-95 shadow-lg shadow-purple-100"
+      >
+        + Add A Car
+      </Link>
+    )}
+    
+    <Link 
+      href="/cars" 
+      className="inline-block px-8 py-3 border-2 border-black text-black text-[11px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-black hover:text-white transition-all duration-300 active:scale-95"
+    >
+      View All Cars
+    </Link>
+  </div>
+</div>
 
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
