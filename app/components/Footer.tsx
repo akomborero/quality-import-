@@ -36,7 +36,7 @@ export default function Footer() {
               <li className="flex items-center gap-3 group">
                 <span className="text-white text-xl"></span>
                 <span className="group-hover:text-white transition-colors">
-                  Harare, Zimbabwe
+                  Gweru, Zimbabwe
                 </span>
               </li>
             </ul>
