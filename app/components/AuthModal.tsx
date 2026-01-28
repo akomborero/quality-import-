@@ -53,7 +53,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
             <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2">Email</label>
             <input 
               type="email" 
-              placeholder="admin@breezecars.com" 
+              placeholder="admin@DriveteqMotors .com" 
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}

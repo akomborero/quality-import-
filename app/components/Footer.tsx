@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand & Mission */}
           <div className="space-y-6">
             <Link href="/" className="text-2xl font-black text-white italic tracking-tighter">
-               Driveteq Motors <span className="text-gray-400">.com</span>
+               Driveteq Motors (Pvt)LTD
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Providing Zimbabwe with the best selection of quality vehicles. 
@@ -24,19 +24,25 @@ export default function Footer() {
               <li className="flex items-center gap-3 group">
                 <span className="text-white text-xl"></span>
                 <a href="tel:+263771716547" className="group-hover:text-white transition-colors underline-offset-4 hover:underline">
-                  +263 771 716 547
+                  +263 773 000 548
                 </a>
               </li>
               <li className="flex items-center gap-3 group">
                 <span className="text-white text-xl"></span>
                 <a href="mailto:breezecardealership@gmail.com" className="group-hover:text-white transition-colors break-all">
-                breezecardealership@gmail.com
+                kmungate@gmail.com
                 </a>
+              </li>
+                <li className="flex items-center gap-3 group">
+                <span className="text-white text-xl"></span>
+                <span className="group-hover:text-white transition-colors">
+                  Number 10 Solomon Mujuru,Madokero
+                </span>
               </li>
               <li className="flex items-center gap-3 group">
                 <span className="text-white text-xl"></span>
                 <span className="group-hover:text-white transition-colors">
-                  Gweru, Zimbabwe
+                  Harare, Zimbabwe
                 </span>
               </li>
             </ul>
@@ -74,7 +80,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-          <p>© {new Date().getFullYear()} Breezecars Dealership. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Driveteq Motors . All Rights Reserved.</p>
           <div className="flex gap-6">
             <a href="https://facebook.com" className="hover:text-white transition-colors">Facebook</a>
             <a href="https://instagram.com" className="hover:text-white transition-colors">Instagram</a>
