@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand & Mission */}
           <div className="space-y-6">
             <Link href="/" className="text-2xl font-black text-white italic tracking-tighter">
-              breezecars<span className="text-gray-400">.com</span>
+               Driveteq Motors <span className="text-gray-400">.com</span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Providing Zimbabwe with the best selection of quality vehicles. 

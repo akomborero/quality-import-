@@ -27,7 +27,7 @@ export default function Features() {
 
           {/* Subtle Background Graphic */}
           <div className="absolute right-[-20px] bottom-[-20px] text-[180px] opacity-10 grayscale group-hover:opacity-20 transition-all duration-700 rotate-[-15deg]">
-            🏎️
+            
           </div>
         </div>
 

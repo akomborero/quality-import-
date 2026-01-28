@@ -7,7 +7,7 @@ export default function AboutPage() {
       <section className="px-6 py-20 bg-gray-50 border-b border-gray-100">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl md:text-7xl font-black text-gray-900 italic tracking-tighter mb-6">
-            WE ARE <span className="text-black">BREEZE CAR DEALERSHIP</span>
+            WE ARE <span className="text-black">  Driveteq </span>
           </h1>
           <p className="text-xl text-gray-600 font-medium leading-relaxed">
             Revolutionizing the automotive experience in Zimbabwe. We don&apos;t just sell cars; 
@@ -47,7 +47,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Every vehicle in our inventory undergoes a rigorous 150-point inspection before it ever reaches our site. 
-                If it isn&apos;t perfect, it isn&apos;t Breeze.
+                If it isn&apos;t perfect, it isn&apos;t  Luxury.
               </p>
             </div>
           </div>
