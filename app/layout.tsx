@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: ' Driveteq Motors | Premium Dealership',
+  title: ' Bolana Clean Motors| Premium Dealership',
   description: "Zimbabwe's Most Trusted Car Marketplace",
 };
 
