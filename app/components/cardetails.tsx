@@ -112,8 +112,8 @@ export default function CarDetails({ carId }: CarDetailsProps) {
 
   const handleWhatsAppDirect = () => {
     if (!car) return;
-    const myNumber = "263 715038954"; 
-    const message = `🚀 *New Inquiry: ${car.year} ${car.make} ${car.model}*%0A%0AHi Breezecars! I am interested in this vehicle...%0A%0A*Link:* ${window.location.href}`;
+    const myNumber = "27 78 759 3914"; 
+    const message = `🚀 *New Inquiry: ${car.year} ${car.make} ${car.model}*%0A%0AHi Qaulity import cars.! I am interested in this vehicle...%0A%0A*Link:* ${window.location.href}`;
     window.location.href = `whatsapp://send?phone=${myNumber}&text=${encodeURIComponent(message)}`;
   };
 

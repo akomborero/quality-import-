@@ -9,10 +9,10 @@ export default function Footer() {
           {/* Brand & Mission */}
           <div className="space-y-6">
             <Link href="/" className="text-2xl font-black text-white italic tracking-tighter">
-              Bolana Clean Motors
+             Qaulity import cars
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Providing Zimbabwe with the best selection of quality vehicles. 
+              Providing South Africa with the best selection of quality vehicles. 
               Your journey to a better drive starts here with transparency and trust.
             </p>
           </div>
@@ -24,13 +24,13 @@ export default function Footer() {
               <li className="flex items-center gap-3 group">
                 <span className="text-white text-xl"></span>
                 <a href="tel:+263771716547" className="group-hover:text-white transition-colors underline-offset-4 hover:underline">
-                  +263 715038954
+                  +27 78 759 3914
                 </a>
               </li>
               <li className="flex items-center gap-3 group">
                 <span className="text-white text-xl"></span>
                 <a href="mailto:breezecardealership@gmail.com" className="group-hover:text-white transition-colors break-all">
-                bornfacebanda87@gmail.com
+                motorssa956@gmail.com
                 </a>
               </li>
                 <li className="flex items-center gap-3 group">

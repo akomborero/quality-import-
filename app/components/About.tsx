@@ -21,7 +21,7 @@ export default function About() {
               <span className="text-black">DRIVING EXPERIENCE.</span>
             </h2>
             <p className="text-lg text-gray-600 font-medium leading-relaxed mb-6">
-              Bolana Clean Motors started with a simple vision: to make high-quality vehicles accessible through a 
+              Qaulity import cars started with a simple vision: to make high-quality vehicles accessible through a 
               transparent, digital-first marketplace. We believe buying or selling a car should be as 
               simple as catching a breeze.
             </p>
