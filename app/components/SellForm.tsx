@@ -35,8 +35,8 @@ export default function SellForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const myNumber = "263 715038954"; 
-    const message = `*🚀 NEW CAR SUBMISSION*%0A%0A*Vehicle:* ${formData.vehicleInfo}%0A*Price:* $${formData.price} USD%0A*Location:* ${formData.location}%0A*Duty:* ${formData.dutyStatus}%0A*Mileage:* ${formData.mileage}km%0A*Fuel:* ${formData.fuelType}%0A*Trans:* ${formData.transmission}%0A%0A*CONTACT*%0A*Name:* ${formData.fullName}%0A*Phone:* ${formData.phone}%0A*Photos:* ${images.length} attached`;
+    const myNumber = "27 78 759 3914"; 
+    const message = `* NEW CAR SUBMISSION*%0A%0A*Vehicle:* ${formData.vehicleInfo}%0A*Price:* $${formData.price} USD%0A*Location:* ${formData.location}%0A*Duty:* ${formData.dutyStatus}%0A*Mileage:* ${formData.mileage}km%0A*Fuel:* ${formData.fuelType}%0A*Trans:* ${formData.transmission}%0A%0A*CONTACT*%0A*Name:* ${formData.fullName}%0A*Phone:* ${formData.phone}%0A*Photos:* ${images.length} attached`;
 
     window.location.href = `whatsapp://send?phone=${myNumber}&text=${message}`;
     setSubmitted(true);
